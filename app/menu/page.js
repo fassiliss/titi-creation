@@ -32,6 +32,10 @@ export default function MenuPage() {
     }
     setLoading(false);
   };
+  const handleAddToCart = (item) => {
+    addItem(item);
+    openCart();
+  };
 
   const mainDishes = menuItems.filter((item) => item.category === "mains");
   const desserts = menuItems.filter((item) => item.category === "desserts");
