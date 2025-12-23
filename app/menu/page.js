@@ -14,6 +14,11 @@ export default function MenuPage() {
   }, []);
 
   const fetchMenuItems = async () => {
+    if (!supabase) {
+      setLoading(false);
+      return;
+    }
+
     const { data, error } = await supabase
       .from("menu_items")
       .select("*")
@@ -26,11 +31,6 @@ export default function MenuPage() {
       setMenuItems(data || []);
     }
     setLoading(false);
-  };
-
-  const handleAddToCart = (item) => {
-    addItem(item);
-    openCart();
   };
 
   const mainDishes = menuItems.filter((item) => item.category === "mains");
