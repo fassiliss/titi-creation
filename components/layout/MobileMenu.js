@@ -13,32 +13,40 @@ const MobileMenu = ({ handleMobileMenu }) => {
         <nav className="menu-box">
           <div className="nav-logo">
             <Link href="/" onClick={handleMobileMenu}>
-              <div
+              <img
+                src="assets/images/logo-2.png"
+                alt="Titi Creation"
+                title=""
+                style={{ display: "none" }}
+              />
+              <span
                 style={{
                   fontSize: "26px",
                   fontWeight: "bold",
                   color: "#DAA520",
-                  lineHeight: "1.2",
                 }}
               >
                 Titi Creation
-              </div>
-              <div
+              </span>
+              <br />
+              <span
                 style={{
                   fontSize: "9px",
                   color: "#DAA520",
                   letterSpacing: "2px",
-                  marginTop: "3px",
                 }}
               >
                 ETHIO-ITALIAN CUISINE
-              </div>
+              </span>
             </Link>
           </div>
           <div className="menu-outer">
-            <div className="collapse navbar-collapse show clearfix">
+            <div
+              className="collapse navbar-collapse show clearfix"
+              id="navbarSupportedContent"
+            >
               <ul className="navigation clearfix">
-                <li className="current">
+                <li>
                   <Link href="/" onClick={handleMobileMenu}>
                     Home
                   </Link>
@@ -66,7 +74,6 @@ const MobileMenu = ({ handleMobileMenu }) => {
               </ul>
             </div>
           </div>
-
           <div className="contact-info">
             <h4>Order Online, Text or Call</h4>
             <ul>
@@ -74,10 +81,8 @@ const MobileMenu = ({ handleMobileMenu }) => {
                 <a href="tel:6155699687">📞 615-569-9687</a>
               </li>
               <li>Nashville, Tennessee</li>
-              <li>Pickup & Delivery Available</li>
             </ul>
           </div>
-
           <div className="social-links">
             <ul className="clearfix">
               <li>
