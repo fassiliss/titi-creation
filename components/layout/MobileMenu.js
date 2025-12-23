@@ -11,27 +11,36 @@ const MobileMenu = ({ handleMobileMenu }) => {
         </div>
 
         <nav className="menu-box">
-          <div className="nav-logo">
-            <Link href="/" style={{ textDecoration: "none" }}>
-              <span
+          <div
+            className="nav-logo"
+            style={{ padding: "25px 20px", borderBottom: "1px solid #333" }}
+          >
+            <Link
+              href="/"
+              onClick={handleMobileMenu}
+              style={{ textDecoration: "none", display: "block" }}
+            >
+              <div
                 style={{
                   fontSize: "28px",
                   fontWeight: "bold",
                   color: "#DAA520",
+                  lineHeight: "1.2",
                 }}
               >
-                Titi <span style={{ color: "#fff" }}>Creation</span>
-              </span>
-              <span
+                Titi Creation
+              </div>
+              <div
                 style={{
-                  display: "block",
                   fontSize: "10px",
                   color: "#DAA520",
-                  letterSpacing: "3px",
+                  letterSpacing: "2px",
+                  marginTop: "5px",
+                  textTransform: "uppercase",
                 }}
               >
-                ETHIO-ITALIAN CUISINE
-              </span>
+                Ethio-Italian Cuisine
+              </div>
             </Link>
           </div>
           <div className="menu-outer">
@@ -69,18 +78,17 @@ const MobileMenu = ({ handleMobileMenu }) => {
             </div>
           </div>
 
-          {/* Contact Info */}
           <div
             style={{
-              padding: "30px 20px",
+              padding: "25px 20px",
               borderTop: "1px solid #333",
-              marginTop: "30px",
+              marginTop: "20px",
             }}
           >
             <div
               style={{
                 color: "#DAA520",
-                fontSize: "16px",
+                fontSize: "14px",
                 marginBottom: "15px",
               }}
             >
@@ -90,10 +98,10 @@ const MobileMenu = ({ handleMobileMenu }) => {
               href="tel:6155699687"
               style={{
                 display: "inline-block",
-                padding: "12px 30px",
+                padding: "12px 25px",
                 backgroundColor: "#DAA520",
                 color: "#1a1a1a",
-                fontSize: "18px",
+                fontSize: "16px",
                 fontWeight: "bold",
                 borderRadius: "50px",
                 textDecoration: "none",
@@ -103,28 +111,20 @@ const MobileMenu = ({ handleMobileMenu }) => {
             </a>
           </div>
 
-          {/* Social */}
-          <div className="social-links" style={{ padding: "20px" }}>
-            <ul
-              className="clearfix"
+          <div style={{ padding: "15px 20px" }}>
+            <a
+              href="#"
               style={{
-                display: "flex",
-                gap: "15px",
-                listStyle: "none",
-                padding: 0,
+                color: "#DAA520",
+                fontSize: "20px",
+                marginRight: "15px",
               }}
             >
-              <li>
-                <a href="#" style={{ color: "#DAA520", fontSize: "20px" }}>
-                  <span className="fab fa-facebook-f"></span>
-                </a>
-              </li>
-              <li>
-                <a href="#" style={{ color: "#DAA520", fontSize: "20px" }}>
-                  <span className="fab fa-instagram"></span>
-                </a>
-              </li>
-            </ul>
+              <i className="fa fa-facebook"></i>
+            </a>
+            <a href="#" style={{ color: "#DAA520", fontSize: "20px" }}>
+              <i className="fa fa-instagram"></i>
+            </a>
           </div>
         </nav>
       </div>
