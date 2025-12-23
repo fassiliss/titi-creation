@@ -94,7 +94,10 @@ export default function Header1({
                     </span>
                   )}
                 </div>
-                <div className="nav-btn navSidebar-button">
+                <div
+                  className="nav-btn navSidebar-button"
+                  style={{ display: "none" }}
+                >
                   <span
                     className="icon flaticon-menu-2"
                     onClick={handleSidebar}

@@ -7484,3 +7484,14 @@
 	-webkit-filter: grayscale(100%);
 	filter: grayscale(100%);
 }
+/* Hide sidebar button on mobile */
+@media (max-width: 991px) {
+    .navSidebar-button {
+        display: none !important;
+    }
+}
+@media (max-width: 991px) {
+    .hide-on-mobile {
+        display: none !important;
+    }
+}
