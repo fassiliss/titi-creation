@@ -1,3 +1,5 @@
+"use client";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Menu from "../Menu";
 import MobileMenu from "../MobileMenu";
@@ -10,16 +12,21 @@ export default function Header1({
   handleSidebar,
 }) {
   const { openCart, getCount } = useCart();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const cartCount = mounted ? getCount() : 0;
 
   return (
     <>
-      {/* Main Header*/}
       <header
         className={`main-header header-style-one ${
           scroll ? "fixed-header" : ""
         }`}
       >
-        {/* Header Upper */}
         <div className="header-upper">
           <div className="auto-container clearfix">
             <div className="pull-left logo-box">
@@ -49,27 +56,23 @@ export default function Header1({
             </div>
 
             <div className="nav-outer clearfix">
-              {/* Mobile Navigation Toggler */}
               <div className="mobile-nav-toggler">
                 <span
                   className="icon flaticon-menu"
                   onClick={handleMobileMenu}
                 ></span>
               </div>
-              {/* Main Menu */}
               <nav className="main-menu navbar-expand-md">
                 <Menu />
               </nav>
-              {/* Main Menu End*/}
               <div className="outer-box clearfix">
-                {/* Cart Button */}
                 <div
                   className="search-box-btn search-box-outer"
                   onClick={openCart}
                   style={{ cursor: "pointer", position: "relative" }}
                 >
                   <span className="icon fa fa-shopping-cart"></span>
-                  {getCount() > 0 && (
+                  {mounted && cartCount > 0 && (
                     <span
                       style={{
                         position: "absolute",
@@ -87,11 +90,10 @@ export default function Header1({
                         justifyContent: "center",
                       }}
                     >
-                      {getCount()}
+                      {cartCount}
                     </span>
                   )}
                 </div>
-                {/* Nav Btn */}
                 <div className="nav-btn navSidebar-button">
                   <span
                     className="icon flaticon-menu-2"
@@ -103,7 +105,6 @@ export default function Header1({
           </div>
         </div>
 
-        {/* Sticky Header */}
         <div className="sticky-header">
           <div className="auto-container clearfix">
             <div className="logo pull-left">
@@ -135,14 +136,13 @@ export default function Header1({
                 <Menu />
               </nav>
               <div className="outer-box clearfix">
-                {/* Cart Button */}
                 <div
                   className="search-box-btn search-box-outer"
                   onClick={openCart}
                   style={{ cursor: "pointer", position: "relative" }}
                 >
                   <span className="icon fa fa-shopping-cart"></span>
-                  {getCount() > 0 && (
+                  {mounted && cartCount > 0 && (
                     <span
                       style={{
                         position: "absolute",
@@ -160,11 +160,10 @@ export default function Header1({
                         justifyContent: "center",
                       }}
                     >
-                      {getCount()}
+                      {cartCount}
                     </span>
                   )}
                 </div>
-                {/* Nav Btn */}
                 <div className="nav-btn navSidebar-button">
                   <span
                     className="icon flaticon-menu-2"
