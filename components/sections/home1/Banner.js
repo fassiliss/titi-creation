@@ -1,158 +1,240 @@
-
-'use client'
-import Link from "next/link"
-import { Autoplay, Navigation, Pagination } from "swiper/modules"
-import { Swiper, SwiperSlide } from "swiper/react"
+"use client";
+import Link from "next/link";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 const swiperOptions = {
-    modules: [Autoplay, Pagination, Navigation],
-    slidesPerView: 1,
-    spaceBetween: 0,
-    // autoplay: {
-    //     delay: 2500,
-    //     disableOnInteraction: false,
-    // },
-    loop: true,
-
-    // Navigation
-    navigation: {
-        nextEl: '.h1n',
-        prevEl: '.h1p',
-    },
-
-    // Pagination
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-
-
-
-}
+  modules: [Autoplay, Pagination, Navigation],
+  slidesPerView: 1,
+  spaceBetween: 0,
+  autoplay: {
+    delay: 4000,
+    disableOnInteraction: false,
+  },
+  loop: true,
+  navigation: {
+    nextEl: ".h1n",
+    prevEl: ".h1p",
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+};
 
 export default function Banner() {
-    return (
-        <>
+  return (
+    <>
+      <section className="banner-section-custom">
+        <Swiper {...swiperOptions} className="main-slider-carousel">
+          {/* Slide 1 */}
+          <SwiperSlide>
+            <div
+              className="slide-custom"
+              style={{ backgroundImage: "url(assets/images/baner1.png)" }}
+            >
+              <div className="overlay"></div>
+              <div className="content-box">
+                <h1>
+                  <span className="gold">Titi</span> Creation
+                </h1>
+                <p>Authentic Ethio-Italian Cuisine</p>
+                <p className="sub">Homemade Lasagna & Tiramisu</p>
+                <div className="btns">
+                  <Link href="/menu" className="btn-gold">
+                    View Menu
+                  </Link>
+                  <a href="tel:6155699687" className="btn-outline">
+                    📞 615-569-9687
+                  </a>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
 
-        {/* Banner Section */}
-        <section className="banner-section">
-            <div className="pattern-layer" style={{ backgroundImage: 'url(assets/images/main-slider/pattern-1.png)' }} ></div>
-            <Swiper {...swiperOptions} className="main-slider-carousel owl-carousel owl-theme">
-                
-                {/* Slide */}
-                <SwiperSlide>
-                <div className="slide">
-                    <div className="icon-layer-one" style={{ backgroundImage: 'url(assets/images/main-slider/icon-1.png)' }} ></div>
-                    <div className="icon-layer-two" style={{ backgroundImage: 'url(assets/images/main-slider/icon-2.png)' }} ></div>
-                    <div className="auto-container">
-                        <div className="row clearfix">
-                        
-                            {/* Content Column */}
-                            <div className="content-column col-lg-6 col-md-12 col-sm-12">
-                                <div className="inner-column">
-                                    <h1><span className="first-letter">Heathly</span><span className="second-letter">Smoothie</span></h1>
-                                    <div className="text">Consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
-                                    <div className="btns-box">
-                                        <Link href="menu" className="theme-btn btn-style-one clearfix"><span className="icon"></span>Buy Now</Link>
-                                    </div>
-                                    <div className="icons-box">
-                                        <img src="assets/images/main-slider/icons.png" alt="" />
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            {/* Image Column */}
-                            <div className="image-column col-lg-6 col-md-12 col-sm-12">
-                                <div className="inner-column">
-                                    <div className="icon-layer-three" style={{ backgroundImage: 'url(assets/images/main-slider/icon-3.png)' }} ></div>
-                                    <div className="image">
-                                        <img src="assets/images/main-slider/content-image-1.png" alt="" />
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
+          {/* Slide 2 */}
+          <SwiperSlide>
+            <div
+              className="slide-custom"
+              style={{ backgroundImage: "url(assets/images/banner2.png)" }}
+            >
+              <div className="overlay"></div>
+              <div className="content-box">
+                <h1>
+                  <span className="gold">Classic</span> Lasagna
+                </h1>
+                <p>
+                  Layers of homemade pasta, rich meat sauce, creamy béchamel
+                </p>
+                <p className="sub">Serves 6-8 people • $45</p>
+                <div className="btns">
+                  <Link href="/menu" className="btn-gold">
+                    Order Now
+                  </Link>
+                  <a href="tel:6155699687" className="btn-outline">
+                    📞 615-569-9687
+                  </a>
                 </div>
-                </SwiperSlide>
+              </div>
+            </div>
+          </SwiperSlide>
 
-                {/* Slide */}
-                <SwiperSlide>
-                <div className="slide">
-                    <div className="icon-layer-one" style={{ backgroundImage: 'url(assets/images/main-slider/icon-1.png)' }} ></div>
-                    <div className="icon-layer-two" style={{ backgroundImage: 'url(assets/images/main-slider/icon-6.png)' }} ></div>
-                    <div className="auto-container">
-                        <div className="row clearfix">
-                        
-                            {/* Content Column */}
-                            <div className="content-column col-lg-6 col-md-12 col-sm-12">
-                                <div className="inner-column">
-                                    <h1><span className="first-letter">Heathly</span><span className="second-letter">Smoothie</span></h1>
-                                    <div className="text">Consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
-                                    <div className="btns-box">
-                                        <Link href="menu" className="theme-btn btn-style-one clearfix"><span className="icon"></span>Buy Now</Link>
-                                    </div>
-                                    <div className="icons-box">
-                                        <img src="assets/images/main-slider/icons.png" alt="" />
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            {/* Image Column */}
-                            <div className="image-column col-lg-6 col-md-12 col-sm-12">
-                                <div className="inner-column">
-                                    <div className="icon-layer-three" style={{ backgroundImage: 'url(assets/images/main-slider/icon-3.png)' }} ></div>
-                                    <div className="image">
-                                        <img src="assets/images/main-slider/content-image-2.png" alt="" />
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
+          {/* Slide 3 */}
+          <SwiperSlide>
+            <div
+              className="slide-custom"
+              style={{ backgroundImage: "url(assets/images/banner3.png)" }}
+            >
+              <div className="overlay"></div>
+              <div className="content-box">
+                <h1>
+                  <span className="gold">Traditional</span> Tiramisu
+                </h1>
+                <p>
+                  Espresso-soaked ladyfingers, mascarpone cream, dusted with
+                  cocoa
+                </p>
+                <p className="sub">Serves 8-10 slices • $35</p>
+                <div className="btns">
+                  <Link href="/menu" className="btn-gold">
+                    Order Now
+                  </Link>
+                  <a href="tel:6155699687" className="btn-outline">
+                    📞 615-569-9687
+                  </a>
                 </div>
-                </SwiperSlide>
-                {/* Slide */}
-                <SwiperSlide>
-                <div className="slide style-two">
-                    <div className="icon-layer-one" style={{ backgroundImage: 'url(assets/images/main-slider/icon-1.png)' }} ></div>
-                    <div className="icon-layer-two" style={{ backgroundImage: 'url(assets/images/main-slider/icon-7.png)' }} ></div>
-                    <div className="auto-container">
-                        <div className="row clearfix">
-                        
-                            {/* Content Column */}
-                            <div className="content-column col-lg-6 col-md-12 col-sm-12">
-                                <div className="inner-column">
-                                    <h1><span className="first-letter">Heathly</span><span className="second-letter">Smoothie</span></h1>
-                                    <div className="text">Consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
-                                    <div className="btns-box">
-                                        <Link href="menu" className="theme-btn btn-style-one clearfix"><span className="icon"></span>Buy Now</Link>
-                                    </div>
-                                    <div className="icons-box">
-                                        <img src="assets/images/main-slider/icons.png" alt="" />
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            {/* Image Column */}
-                            <div className="image-column col-lg-6 col-md-12 col-sm-12">
-                                <div className="inner-column">
-                                    <div className="icon-layer-three" style={{ backgroundImage: 'url(assets/images/main-slider/icon-3.png)' }} ></div>
-                                    <div className="image">
-                                        <img src="assets/images/main-slider/content-image-3.png" alt="" />
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
+              </div>
+            </div>
+          </SwiperSlide>
+
+          {/* Slide 4 */}
+          <SwiperSlide>
+            <div
+              className="slide-custom"
+              style={{ backgroundImage: "url(assets/images/banner4.png)" }}
+            >
+              <div className="overlay"></div>
+              <div className="content-box">
+                <h1>
+                  <span className="gold">Event</span> Catering
+                </h1>
+                <p>
+                  Perfect for birthdays, graduations, weddings & corporate
+                  events
+                </p>
+                <p className="sub">Pickup & Delivery in Nashville</p>
+                <div className="btns">
+                  <Link href="/contact" className="btn-gold">
+                    Contact Us
+                  </Link>
+                  <a href="tel:6155699687" className="btn-outline">
+                    📞 615-569-9687
+                  </a>
                 </div>
-                </SwiperSlide>
-            </Swiper>
-            
-        </section>
-        {/* End Banner Section */}
-            
-        </>
-    )
+              </div>
+            </div>
+          </SwiperSlide>
+        </Swiper>
+
+        <style jsx>{`
+          .banner-section-custom {
+            width: 100%;
+            min-height: 100vh;
+          }
+          .slide-custom {
+            min-height: 100vh;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+          }
+          .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+          }
+          .content-box {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 20px;
+            max-width: 800px;
+          }
+          .content-box h1 {
+            font-size: 60px;
+            color: #fff;
+            margin-bottom: 20px;
+            font-weight: bold;
+          }
+          .content-box h1 .gold {
+            color: #daa520;
+          }
+          .content-box p {
+            font-size: 22px;
+            color: #fff;
+            margin-bottom: 10px;
+          }
+          .content-box .sub {
+            font-size: 18px;
+            color: #daa520;
+            margin-bottom: 30px;
+          }
+          .btns {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+          }
+          .btn-gold {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #daa520;
+            color: #1a1a1a;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+          }
+          .btn-gold:hover {
+            background: #ffd700;
+            transform: scale(1.05);
+          }
+          .btn-outline {
+            display: inline-block;
+            padding: 15px 40px;
+            border: 2px solid #daa520;
+            color: #daa520;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+          }
+          .btn-outline:hover {
+            background: #daa520;
+            color: #1a1a1a;
+          }
+          @media (max-width: 768px) {
+            .content-box h1 {
+              font-size: 36px;
+            }
+            .content-box p {
+              font-size: 18px;
+            }
+            .btn-gold,
+            .btn-outline {
+              padding: 12px 30px;
+              font-size: 16px;
+            }
+          }
+        `}</style>
+      </section>
+    </>
+  );
 }
