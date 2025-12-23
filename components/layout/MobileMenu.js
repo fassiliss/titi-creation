@@ -1,93 +1,134 @@
-'use client'
+"use client";
 import Link from "next/link";
-import { useState } from "react";
 
-const MobileMenu = ({ isSidebar, handleMobileMenu, handleSidebar }) => {
-  const [isActive, setIsActive] = useState({
-    status: false,
-    key: "",
-    subMenuKey: "",
-  });
+const MobileMenu = ({ handleMobileMenu }) => {
+  return (
+    <>
+      <div className="mobile-menu">
+        <div className="menu-backdrop" onClick={handleMobileMenu}></div>
+        <div className="close-btn" onClick={handleMobileMenu}>
+          <span className="icon flaticon-multiply"></span>
+        </div>
 
-  const handleToggle = (key, subMenuKey = "") => {
-    if (isActive.key === key && isActive.subMenuKey === subMenuKey) {
-      setIsActive({
-        status: false,
-        key: "",
-        subMenuKey: "",
-      });
-    } else {
-      setIsActive({
-        status: true,
-        key,
-        subMenuKey,
-      });
-    }
-  };
-    return (
-        <>  
-            <div className="mobile-menu">
-                <div className="menu-backdrop" onClick={handleMobileMenu}></div>
-                <div className="close-btn" onClick={handleMobileMenu}><span className="icon flaticon-multiply"></span></div>
-                
-                <nav className="menu-box">
-                    <div className="nav-logo"><Link href="/"><img src="assets/images/logo-2.png" alt="" title="" /></Link></div>
-                    <div className="menu-outer">
-                        <div className="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
-                            <ul className="navigation">
-                                <li className={isActive.key == 1 ? "dropdown current" : "dropdown"}><Link href="/">Home</Link>
-                                    <ul style={{ display: `${isActive.key == 1 ? "block" : "none"}` }}>
-                                        <li><Link href="/">Home One</Link></li>
-                                        <li><Link href="index-2">Home Two</Link></li>
-                                        <li><Link href="index-3">Home Three</Link></li>
-                                        <li><Link href="index-4">Home Four</Link></li>
-                                    </ul>
-                                    <div className={isActive.key == 1 ? "dropdown-btn open" : "dropdown-btn"} onClick={() => handleToggle(1)}><span className="fa fa-angle-right" /></div>
-                                </li>
-                                <li className={isActive.key == 2 ? "dropdown current" : "dropdown"}><Link href="/#">About</Link>
-                                    <ul style={{ display: `${isActive.key == 2 ? "block" : "none"}` }}>                                 
-                                        <li><Link href="about">About</Link></li>
-                                        <li><Link href="team">Team</Link></li>
-                                        <li><Link href="restaurant">Restaurant</Link></li>
-                                    </ul>
-                                    <div className={isActive.key == 2 ? "dropdown-btn open" : "dropdown-btn"} onClick={() => handleToggle(2)}><span className="fa fa-angle-right" /></div>
-                                </li>
-                                <li className={isActive.key == 3 ? "dropdown current" : "dropdown"}><Link href="/#">Menu</Link>
-                                    <ul style={{ display: `${isActive.key == 3 ? "block" : "none"}` }}>                                 
-                                        <li><Link href="menu">Menu</Link></li>
-                                        <li><Link href="milkshake">Milk Shake</Link></li>
-                                        <li><Link href="frappe">Frappe</Link></li>
-                                        <li><Link href="boba-tea">Boba Tea</Link></li>
-                                        <li><Link href="slushy">Slushy</Link></li>
-                                    </ul>
-                                    <div className={isActive.key == 3 ? "dropdown-btn open" : "dropdown-btn"} onClick={() => handleToggle(3)}><span className="fa fa-angle-right" /></div>
-                                </li>
-                                <li className={isActive.key == 4 ? "dropdown current" : "dropdown"}><Link href="/#">Gallery</Link>
-                                    <ul style={{ display: `${isActive.key == 4 ? "block" : "none"}` }}>                                 
-                                        <li><Link href="gallery">Gallery</Link></li>
-                                        <li><Link href="gallery-2">Gallery 02</Link></li>
-                                    </ul>
-                                    <div className={isActive.key == 4 ? "dropdown-btn open" : "dropdown-btn"} onClick={() => handleToggle(4)}><span className="fa fa-angle-right" /></div>
-                                </li>
-                                <li className={isActive.key == 5 ? "dropdown current" : "dropdown"}><Link href="/#">Blog</Link>
-                                    <ul style={{ display: `${isActive.key == 5 ? "block" : "none"}` }}>                                 
-                                        <li><Link href="blog-classic">Blog Classic</Link></li>
-                                        <li><Link href="blog-details2">Blog Single 02</Link></li>
-                                        <li><Link href="blog-details">Blog Details</Link></li>
-                                        <li><Link href="/error">Not Found</Link></li>
-                                    </ul>
-                                    <div className={isActive.key == 5 ? "dropdown-btn open" : "dropdown-btn"} onClick={() => handleToggle(5)}><span className="fa fa-angle-right" /></div>
-                                </li>
-                                <li><Link href="/contact">Contact</Link></li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
+        <nav className="menu-box">
+          <div className="nav-logo">
+            <Link href="/" style={{ textDecoration: "none" }}>
+              <span
+                style={{
+                  fontSize: "28px",
+                  fontWeight: "bold",
+                  color: "#DAA520",
+                }}
+              >
+                Titi <span style={{ color: "#fff" }}>Creation</span>
+              </span>
+              <span
+                style={{
+                  display: "block",
+                  fontSize: "10px",
+                  color: "#DAA520",
+                  letterSpacing: "3px",
+                }}
+              >
+                ETHIO-ITALIAN CUISINE
+              </span>
+            </Link>
+          </div>
+          <div className="menu-outer">
+            <div
+              className="collapse navbar-collapse show clearfix"
+              id="navbarSupportedContent"
+            >
+              <ul className="navigation">
+                <li>
+                  <Link href="/" onClick={handleMobileMenu}>
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/about" onClick={handleMobileMenu}>
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/menu" onClick={handleMobileMenu}>
+                    Menu
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/gallery" onClick={handleMobileMenu}>
+                    Gallery
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" onClick={handleMobileMenu}>
+                    Contact
+                  </Link>
+                </li>
+              </ul>
             </div>
+          </div>
 
-          
+          {/* Contact Info */}
+          <div
+            style={{
+              padding: "30px 20px",
+              borderTop: "1px solid #333",
+              marginTop: "30px",
+            }}
+          >
+            <div
+              style={{
+                color: "#DAA520",
+                fontSize: "16px",
+                marginBottom: "15px",
+              }}
+            >
+              Order Online, Text or Call
+            </div>
+            <a
+              href="tel:6155699687"
+              style={{
+                display: "inline-block",
+                padding: "12px 30px",
+                backgroundColor: "#DAA520",
+                color: "#1a1a1a",
+                fontSize: "18px",
+                fontWeight: "bold",
+                borderRadius: "50px",
+                textDecoration: "none",
+              }}
+            >
+              📞 615-569-9687
+            </a>
+          </div>
 
-        </>
-    )
-}
+          {/* Social */}
+          <div className="social-links" style={{ padding: "20px" }}>
+            <ul
+              className="clearfix"
+              style={{
+                display: "flex",
+                gap: "15px",
+                listStyle: "none",
+                padding: 0,
+              }}
+            >
+              <li>
+                <a href="#" style={{ color: "#DAA520", fontSize: "20px" }}>
+                  <span className="fab fa-facebook-f"></span>
+                </a>
+              </li>
+              <li>
+                <a href="#" style={{ color: "#DAA520", fontSize: "20px" }}>
+                  <span className="fab fa-instagram"></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </>
+  );
+};
 export default MobileMenu;
